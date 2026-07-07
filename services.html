@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services | Velmure Tech</title>
+<meta name="description" content="Websites built specifically for car dealerships and travel agencies — see what's included and choose a package. Message us for pricing." />
+
+<link rel="icon" type="image/png" href="images/logo-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/tailwind.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="services" class="bg-surface text-ink font-sans antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-[60] focus:top-3 focus:left-3 focus:bg-white focus:text-ink focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg">Skip to content</a>
+
+<div class="bg-ink text-slate-300 text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-end sm:justify-between gap-4">
+    <p class="hidden sm:block text-slate-400">Car dealership &amp; travel agency websites</p>
+    <a href="https://wa.me/233591847958" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-medium hover:text-secondary transition-colors">
+      <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M12.04 0C5.407 0 .06 5.335.06 11.938c0 2.104.552 4.157 1.601 5.966L0 24l6.284-1.645a11.94 11.94 0 0 0 5.75 1.464h.005c6.633 0 11.98-5.335 11.98-11.939A11.868 11.868 0 0 0 20.463 3.51 11.868 11.868 0 0 0 12.045 0zm5.432 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      WhatsApp: +233 59 184 7958
+    </a>
+  </div>
+</div>
+
+
+<!-- ===================== HEADER ===================== -->
+<header id="site-header" class="sticky top-0 z-40 bg-white/70 backdrop-blur-xl backdrop-saturate-150 border-b border-white/40 shadow-sm shadow-slate-900/5 transition-shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+        <img src="images/logo-icon.png" alt="Velmure Tech logo" class="h-9 w-9 sm:h-10 sm:w-10 rounded-xl ring-1 ring-slate-100 object-cover" />
+        <span class="font-bold text-lg tracking-tight text-ink">Velmure <span class="text-primary-dark font-semibold">Tech</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a data-page="home" href="index.html" class="nav-link text-sm font-medium text-slate-600 hover:text-primary-dark transition-colors">Home</a>
+        <a data-page="services" href="services.html" class="nav-link text-sm font-medium text-slate-600 hover:text-primary-dark transition-colors">Services</a>
+        <a data-page="portfolio" href="portfolio.html" class="nav-link text-sm font-medium text-slate-600 hover:text-primary-dark transition-colors">Portfolio</a>
+        <a data-page="about" href="about.html" class="nav-link text-sm font-medium text-slate-600 hover:text-primary-dark transition-colors">About</a>
+        <a data-page="contact" href="contact.html" class="nav-link text-sm font-medium text-slate-600 hover:text-primary-dark transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27d%20like%20to%20talk%20about%20a%20new%20website." target="_blank" rel="noopener" class="btn btn-accent !py-2.5 !px-5 text-sm">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M12.04 0C5.407 0 .06 5.335.06 11.938c0 2.104.552 4.157 1.601 5.966L0 24l6.284-1.645a11.94 11.94 0 0 0 5.75 1.464h.005c6.633 0 11.98-5.335 11.98-11.939A11.868 11.868 0 0 0 20.463 3.51 11.868 11.868 0 0 0 12.045 0zm5.432 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100">
+        <svg id="icon-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/40 bg-white/80 backdrop-blur-xl">
+    <div class="px-4 py-4 space-y-1">
+      <a data-page="home" href="index.html" class="nav-link block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Home</a>
+      <a data-page="services" href="services.html" class="nav-link block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Services</a>
+      <a data-page="portfolio" href="portfolio.html" class="nav-link block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Portfolio</a>
+      <a data-page="about" href="about.html" class="nav-link block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">About</a>
+      <a data-page="contact" href="contact.html" class="nav-link block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
+      <a href="https://wa.me/233591847958" target="_blank" rel="noopener" class="btn btn-accent w-full mt-2">WhatsApp Us</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== PAGE INTRO ===================== -->
+  <section class="relative overflow-hidden py-24 sm:py-32">
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="images/Services.jpeg" alt="" class="h-full w-full object-cover scale-105 blur-sm" />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/50 via-primary-dark/35 to-ink/55"></div>
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-secondary/30 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-accent/30 blur-3xl"></div>
+    </div>
+    <div class="relative z-[1] max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-3xl p-8 sm:p-12 text-center fade-in-load">
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 text-white px-4 py-1.5 text-xs font-semibold tracking-wide uppercase">Services</p>
+        <h1 class="mt-6 text-3xl sm:text-5xl font-extrabold leading-[1.15] sm:leading-tight tracking-tight text-white">Built for car dealerships. Built for <span class="text-secondary">travel agencies</span>. Built to convert.</h1>
+        <p class="mt-5 text-lg text-slate-100 leading-relaxed max-w-2xl mx-auto">We specialize in exactly two industries so every site we build already speaks the language your customers are searching in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NICHE BREAKDOWN ===================== -->
+  <section class="py-20 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8">
+
+        <div class="card p-8 sm:p-10 reveal">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-dark text-white">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25h-8.5A2.5 2.5 0 003.25 9.5v6a1 1 0 001 1H4.5"/></svg>
+          </div>
+          <h2 class="mt-5 text-2xl font-bold text-ink">For Car Dealerships</h2>
+          <p class="mt-2 text-slate-500">Every feature is aimed at getting nearby buyers to call, message, or walk onto your lot.</p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Inventory-friendly layout that puts your current stock front and center</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">"Get Financed" and "Schedule a Test Drive" lead-capture CTAs</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Location &amp; service-area pages so nearby buyers find you first</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Google Business Profile optimized for "car dealership near me" searches</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Click-to-call and WhatsApp buttons for fast buyer inquiries</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Trust signals — reviews, certifications, financing partners — front and center</span></li>
+          </ul>
+          <a href="#pricing" class="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-dark hover:text-secondary transition-colors">See dealership packages
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </a>
+        </div>
+
+        <div class="card p-8 sm:p-10 reveal reveal-delay-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-white">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.804a1.125 1.125 0 00-1.006 0L3.622 6.24C3.24 6.43 3 6.822 3 7.247v11.964c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
+          </div>
+          <h2 class="mt-5 text-2xl font-bold text-ink">For Travel Agencies</h2>
+          <p class="mt-2 text-slate-500">Every feature is aimed at turning browsers into booking inquiries.</p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Destination &amp; package pages that showcase your best offers</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">"Request a Quote" and "Book a Consultation" CTAs built for inquiries</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Local visibility for "travel agent near me" and "[city] travel agency" searches</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Google Business Profile setup so you show up in local map results</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">WhatsApp inquiry button for fast, familiar booking conversations</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600">Seasonal promotion sections you can hand us updates for anytime</span></li>
+          </ul>
+          <a href="#pricing" class="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-dark hover:text-secondary transition-colors">See travel agency packages
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT'S INCLUDED ===================== -->
+  <section class="py-20 sm:py-24 bg-primary-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">What every Velmure Tech project can include</h2>
+        <p class="mt-4 text-slate-300 text-lg leading-relaxed">This is the full toolkit we build with. Exact inclusions vary by package — see the tiers below for what's bundled where.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div class="card !bg-white/10 !border-white/15 backdrop-blur-md backdrop-saturate-150 p-6 text-center reveal reveal-delay-1">
+          <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          </div>
+          <p class="mt-4 text-sm font-semibold text-white">Custom mobile-first website</p>
+        </div>
+        <div class="card !bg-white/10 !border-white/15 backdrop-blur-md backdrop-saturate-150 p-6 text-center reveal reveal-delay-1">
+          <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+          </div>
+          <p class="mt-4 text-sm font-semibold text-white">On-page SEO</p>
+        </div>
+        <div class="card !bg-white/10 !border-white/15 backdrop-blur-md backdrop-saturate-150 p-6 text-center reveal reveal-delay-2">
+          <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </div>
+          <p class="mt-4 text-sm font-semibold text-white">Google Business Profile setup</p>
+        </div>
+        <div class="card !bg-white/10 !border-white/15 backdrop-blur-md backdrop-saturate-150 p-6 text-center reveal reveal-delay-2">
+          <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a1.5 1.5 0 001.5-1.5v-3.72a1.125 1.125 0 00-.852-1.09l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.09-.852H2.25a1.5 1.5 0 00-1.5 1.5v0z"/></svg>
+          </div>
+          <p class="mt-4 text-sm font-semibold text-white">WhatsApp / call button</p>
+        </div>
+        <div class="card !bg-white/10 !border-white/15 backdrop-blur-md backdrop-saturate-150 p-6 text-center reveal reveal-delay-3">
+          <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-secondary/15 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 000 18M12.5 3a17 17 0 010 18"/></svg>
+          </div>
+          <p class="mt-4 text-sm font-semibold text-white">Custom domain connected</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== URGENCY BANNER ===================== -->
+  <section class="bg-accent/10 border-y border-accent/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+      <svg class="h-5 w-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m0 3.75h.007v.008H12v-.008zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p class="text-sm font-medium text-ink"><span class="font-semibold">We only take on a limited number of new clients each month</span> — it's how we keep delivery fast and quality high.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING TIERS ===================== -->
+  <section id="pricing" class="py-20 sm:py-24 bg-mesh scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ink">Choose your package</h2>
+        <p class="mt-4 text-slate-600 text-lg leading-relaxed">No numbers here on purpose — message us and we'll recommend the right package once we know your business.</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-3 gap-8 items-start">
+
+        <!-- Starter -->
+        <div class="card !border-t-4 !border-t-secondary p-8 reveal reveal-delay-1">
+          <h3 class="text-lg font-bold text-ink">Starter</h3>
+          <p class="mt-1.5 text-sm text-slate-500">A solid, professional foundation to get you online.</p>
+          <ul class="mt-7 space-y-3.5">
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">3-page site</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Mobile-responsive design</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Basic on-page SEO</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Contact form</span></li>
+          </ul>
+          <a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27d%20like%20pricing%20for%20the%20Starter%20package." target="_blank" rel="noopener" class="btn btn-outline w-full mt-8">Get Pricing</a>
+        </div>
+
+        <!-- Growth (Most Popular) -->
+        <div class="card tier-popular p-8 relative lg:-translate-y-3 reveal reveal-delay-2">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-accent text-white text-xs font-bold uppercase tracking-wide px-4 py-1.5 shadow">Most Popular</span>
+          <h3 class="text-lg font-bold text-ink">Growth</h3>
+          <p class="mt-1.5 text-sm text-slate-500">Our most-recommended package — built to actually get found.</p>
+          <ul class="mt-7 space-y-3.5">
+            <li class="flex gap-3"><svg class="h-5 w-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">5-page site</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Everything in Starter</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Google Business Profile setup</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">WhatsApp booking button</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Custom domain connected</span></li>
+          </ul>
+          <a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27d%20like%20pricing%20for%20the%20Growth%20package." target="_blank" rel="noopener" class="btn btn-accent w-full mt-8">Message Us for Pricing</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="card !border-t-4 !border-t-primary-dark p-8 reveal reveal-delay-3">
+          <h3 class="text-lg font-bold text-ink">Premium</h3>
+          <p class="mt-1.5 text-sm text-slate-500">For businesses that want it done fast, with support after launch.</p>
+          <ul class="mt-7 space-y-3.5">
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Everything in Growth</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">Priority 5-day delivery</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">1 month of post-launch support</span></li>
+            <li class="flex gap-3"><svg class="h-5 w-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg><span class="text-slate-600 text-sm">First round of review requests sent</span></li>
+          </ul>
+          <a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27d%20like%20pricing%20for%20the%20Premium%20package." target="_blank" rel="noopener" class="btn btn-outline w-full mt-8">Get Pricing</a>
+        </div>
+
+      </div>
+
+      <!-- Monthly care add-on -->
+      <div class="mt-10 max-w-3xl mx-auto reveal">
+        <div class="card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-ink">Optional: Ongoing Monthly Care</p>
+            <p class="mt-1 text-sm text-slate-500 leading-relaxed">Available alongside any package — content updates, review monitoring, and priority support so your site keeps working after launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NO-RISK GUARANTEE ===================== -->
+  <section id="guarantee" class="py-20 sm:py-24 bg-white border-y border-slate-100 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="rounded-2xl bg-primary-dark p-8 sm:p-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-noise-dots opacity-30" aria-hidden="true"></div>
+        <div class="relative">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white">
+            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.286z"/></svg>
+          </div>
+          <h2 class="mt-6 text-2xl sm:text-3xl font-bold text-white">Our No-Risk Guarantee</h2>
+          <p class="mt-4 text-slate-300 leading-relaxed max-w-xl mx-auto">If your site isn't live within 10 business days of us receiving your content and photos, you get a discount — no arguments. The risk is on us, not you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="py-20 sm:py-24 bg-mesh">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ink">Frequently asked questions</h2>
+        <p class="mt-4 text-slate-600 text-lg leading-relaxed">Still deciding? Here's what most dealership and travel agency owners ask us first.</p>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <details class="group card p-6 reveal reveal-delay-1">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            Why don't you show prices on the site?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Every dealership and agency is different — inventory size, number of locations, how much content you already have. A flat number on a website can't account for that, so instead of guessing, we quote you accurately after a quick conversation about your actual business.</p>
+        </details>
+
+        <details class="group card p-6 reveal reveal-delay-1">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            Do I need to have photos and content ready before we start?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">No — but the sooner we have it, the sooner your 10-business-day countdown starts. Once you reach out, we'll give you a simple checklist of exactly what to send so nothing holds things up.</p>
+        </details>
+
+        <details class="group card p-6 reveal reveal-delay-2">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            I don't have a domain yet — is that a problem?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Not at all. We'll help you pick and connect one as part of the Growth and Premium packages — you don't need to arrive with anything already set up.</p>
+        </details>
+
+        <details class="group card p-6 reveal reveal-delay-2">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            Can I update the website myself after it's live?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">If you're comfortable making basic edits, we can walk you through it. If you'd rather not deal with it, that's exactly what the optional Monthly Care add-on is for — we handle updates, review monitoring, and support for you.</p>
+        </details>
+
+        <details class="group card p-6 reveal reveal-delay-3">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            Do you only work with car dealerships and travel agencies?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Yes, on purpose. We'd rather be the best option for these two industries than an average option for everyone — it's why the packages already include what dealerships and agencies specifically need instead of generic filler.</p>
+        </details>
+
+        <details class="group card p-6 reveal reveal-delay-3">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink">
+            What if I'm not happy with the finished site?
+            <svg class="h-5 w-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">We keep you in the loop throughout the build rather than disappearing until launch day, so there shouldn't be surprises. And if we miss the 10-business-day window on our end, the <a href="#guarantee" class="text-secondary font-medium hover:underline">No-Risk Guarantee</a> kicks in automatically.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="py-20 sm:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ink">Not sure which package fits?</h2>
+      <p class="mt-4 text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">Send us a quick message with your business name — we'll recommend a package for you.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27m%20not%20sure%20which%20package%20fits%20my%20business." target="_blank" rel="noopener" class="btn btn-accent text-base">Message Us for Pricing</a>
+        <a href="contact.html" class="btn btn-outline text-base">Use the Contact Form</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-ink text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <img src="images/logo-icon.png" alt="Velmure Tech logo" class="h-9 w-9 rounded-xl ring-1 ring-white/10 object-cover" />
+          <span class="font-bold text-lg text-white">Velmure Tech</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-400 leading-relaxed max-w-sm">We build websites for car dealerships and travel agencies that are found on Google, trusted by visitors, and built to turn clicks into calls and messages.</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-white">Site</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="index.html" class="hover:text-secondary transition-colors">Home</a></li>
+          <li><a href="services.html" class="hover:text-secondary transition-colors">Services</a></li>
+          <li><a href="portfolio.html" class="hover:text-secondary transition-colors">Portfolio</a></li>
+          <li><a href="about.html" class="hover:text-secondary transition-colors">About</a></li>
+          <li><a href="contact.html" class="hover:text-secondary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-white">Get in touch</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li class="text-slate-400">Car dealership &amp; travel agency websites</li>
+          <li><a href="https://wa.me/233591847958" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-secondary transition-colors">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; <span data-year></span> Velmure Tech. Founded by Michael Velmure-Mensah. All rights reserved.</p>
+      <p class="flex gap-4"><a href="privacy.html" class="hover:text-secondary transition-colors">Privacy Policy</a><a href="terms.html" class="hover:text-secondary transition-colors">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOATING BUTTON ===================== -->
+<a href="https://wa.me/233591847958?text=Hi%20Velmure%20Tech%2C%20I%27d%20like%20to%20talk%20about%20a%20new%20website." target="_blank" rel="noopener" class="wa-float" aria-label="Chat with Velmure Tech on WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white wa-glow hover:scale-105 transition-transform">
+    <svg viewBox="0 0 24 24" class="h-7 w-7 fill-current" aria-hidden="true"><path d="M12.04 0C5.407 0 .06 5.335.06 11.938c0 2.104.552 4.157 1.601 5.966L0 24l6.284-1.645a11.94 11.94 0 0 0 5.75 1.464h.005c6.633 0 11.98-5.335 11.98-11.939A11.868 11.868 0 0 0 20.463 3.51 11.868 11.868 0 0 0 12.045 0zm5.432 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+  </span>
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

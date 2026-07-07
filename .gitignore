@@ -1,0 +1,6 @@
+# Claude Code local tool settings (not project content)
+.claude/
+
+# OS cruft
+.DS_Store
+Thumbs.db
