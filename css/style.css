@@ -13,6 +13,43 @@
   --color-ink: #0f172a;          /* dark text / footer */
 }
 
+/* ---- Opacity-modifier utilities for CSS-variable-based brand colors -----
+   tailwind.config.js defines primary/secondary/accent/ink as raw var(--x)
+   references, which Tailwind cannot apply a color-opacity modifier to, so
+   any `bg-accent/30`, `border-secondary/40`, `from-ink/95` etc. class was
+   silently dropped from the compiled build. These hand-written rules
+   restore exactly the classes already used in the HTML (same selectors
+   Tailwind would generate), without needing a rebuild.
+   -------------------------------------------------------------------------- */
+.bg-accent\/10 { background-color: rgb(71 85 105 / 0.1); }
+.bg-accent\/25 { background-color: rgb(71 85 105 / 0.25); }
+.bg-accent\/30 { background-color: rgb(71 85 105 / 0.3); }
+.bg-primary\/25 { background-color: rgb(71 85 105 / 0.25); }
+.bg-primary-dark\/5 { background-color: rgb(51 65 85 / 0.05); }
+.bg-secondary\/10 { background-color: rgb(6 182 212 / 0.1); }
+.bg-secondary\/15 { background-color: rgb(6 182 212 / 0.15); }
+.bg-secondary\/25 { background-color: rgb(6 182 212 / 0.25); }
+.bg-secondary\/30 { background-color: rgb(6 182 212 / 0.3); }
+.bg-secondary\/5 { background-color: rgb(6 182 212 / 0.05); }
+.border-accent\/20 { border-color: rgb(71 85 105 / 0.2); }
+.border-secondary\/40 { border-color: rgb(6 182 212 / 0.4); }
+.from-accent\/20 { --tw-gradient-from: rgb(71 85 105 / 0.2) var(--tw-gradient-from-position); --tw-gradient-to: rgb(71 85 105 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-ink\/60 { --tw-gradient-from: rgb(15 23 42 / 0.6) var(--tw-gradient-from-position); --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-ink\/80 { --tw-gradient-from: rgb(15 23 42 / 0.8) var(--tw-gradient-from-position); --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-ink\/85 { --tw-gradient-from: rgb(15 23 42 / 0.85) var(--tw-gradient-from-position); --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-ink\/95 { --tw-gradient-from: rgb(15 23 42 / 0.95) var(--tw-gradient-from-position); --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-primary-dark\/50 { --tw-gradient-from: rgb(51 65 85 / 0.5) var(--tw-gradient-from-position); --tw-gradient-to: rgb(51 65 85 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.from-secondary\/40 { --tw-gradient-from: rgb(6 182 212 / 0.4) var(--tw-gradient-from-position); --tw-gradient-to: rgb(6 182 212 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.via-accent\/25 { --tw-gradient-to: rgb(71 85 105 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(71 85 105 / 0.25) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.via-ink\/80 { --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(15 23 42 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.via-primary-dark\/35 { --tw-gradient-to: rgb(51 65 85 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(51 65 85 / 0.35) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.via-primary-dark\/70 { --tw-gradient-to: rgb(51 65 85 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(51 65 85 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.via-primary-dark\/75 { --tw-gradient-to: rgb(51 65 85 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(51 65 85 / 0.75) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.via-secondary\/15 { --tw-gradient-to: rgb(6 182 212 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(6 182 212 / 0.15) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.to-ink\/45 { --tw-gradient-to: rgb(15 23 42 / 0.45) var(--tw-gradient-to-position); }
+.to-ink\/55 { --tw-gradient-to: rgb(15 23 42 / 0.55) var(--tw-gradient-to-position); }
+.to-ink\/85 { --tw-gradient-to: rgb(15 23 42 / 0.85) var(--tw-gradient-to-position); }
+
 html {
   scroll-behavior: smooth;
 }
@@ -133,6 +170,23 @@ select:focus-visible {
   border-color: #cbd5e1;
 }
 
+/* Fixed-ratio cover photo pinned to the top of a .card, used to introduce
+   niche/industry sections with a supporting photo instead of just an icon.
+   Needs `overflow-hidden` on the .card itself to clip to its rounded corners. */
+.card-cover {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.card:hover .card-cover img {
+  transform: scale(1.06);
+}
+
 .tier-popular {
   position: relative;
   border: 2px solid transparent;
@@ -146,30 +200,35 @@ select:focus-visible {
   border-color: transparent;
 }
 
-/* ---- Glassmorphism ----------------------------------------------------------
-   Frosted-glass panels for use over photos or colored/dark sections.
-   .glass = translucent on dark backgrounds, .glass-light = translucent on
-   light backgrounds. Both need a backdrop-filter-capable browser; they
-   degrade gracefully to a plain tinted panel otherwise.
+/* ---- Solid panels -------------------------------------------------------
+   Opaque panels for use over photos or colored/dark sections. Replaces the
+   site's former frosted-glass (backdrop-blur) treatment with flat, solid
+   fills for a cleaner, more corporate look and more reliable text contrast.
+   .glass = solid panel for dark/photo backgrounds, .glass-light = solid
+   panel for light backgrounds.
    -------------------------------------------------------------------------- */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2), 0 8px 32px -8px rgba(0, 0, 0, 0.35);
-}
-.glass:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.28);
+  background: var(--color-primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px -20px rgba(15, 23, 42, 0.6);
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6), 0 8px 32px -12px rgba(15, 23, 42, 0.15);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 32px -12px rgba(15, 23, 42, 0.15);
+}
+
+/* Solid card fill for use on dark (--color-primary-dark) sections, in place
+   of the former translucent/blurred card variant. Values chosen to match
+   Tailwind classes not present in the prebuilt css/tailwind.css, since that
+   file requires a manual rebuild (see tailwind-src.css) that isn't run here. */
+.card-on-dark {
+  background-color: var(--color-primary) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+.card-on-dark:hover {
+  border-color: rgba(255, 255, 255, 0.28) !important;
 }
 
 /* ---- Glow accents ------------------------------------------------------------ */
