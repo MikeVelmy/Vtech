@@ -14,9 +14,12 @@ module.exports = {
         accent: "var(--color-accent)",
         surface: "var(--color-bg)",
         ink: "var(--color-ink)",
+        void: "#070c17",
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "ui-sans-serif", "sans-serif"],
+        mono: ["Space Mono", "ui-monospace", "monospace"],
       },
     },
   },

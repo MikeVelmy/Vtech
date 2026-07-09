@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generates LocalBusiness JSON-LD from seo/business.json and injects the same
-block into the <head> of every top-level .html file in the project.
+Generates ProfessionalService JSON-LD from seo/business.json and injects the
+same block into the <head> of every top-level .html file in the project.
 
 This is a plain static HTML site (no templating engine, no shared layout
 file), so "the main layout head" means every page's own <head> — this
@@ -28,15 +28,18 @@ END_MARKER = "<!-- END LOCALBUSINESS SCHEMA -->"
 
 
 def build_schema(config: dict) -> dict:
-    """Map the config file onto a schema.org LocalBusiness dict, omitting
-    any field that's empty rather than publishing a placeholder value."""
+    """Map the config file onto a schema.org ProfessionalService dict,
+    omitting any field that's empty rather than publishing a placeholder
+    value (e.g. a relative-path logo/image is invalid schema.org markup,
+    which needs an absolute URL — so logo/image are only emitted once a
+    real `url` is set, never as a bare relative path)."""
     url = config.get("url", "").strip()
     logo_path = config.get("logoPath", "").strip()
-    logo_url = urljoin(url, logo_path) if url and logo_path else (logo_path or None)
+    logo_url = urljoin(url, logo_path) if url and logo_path else None
 
     schema = {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "ProfessionalService",
         "name": config.get("name") or None,
         "description": config.get("description") or None,
         "url": url or None,
@@ -45,6 +48,10 @@ def build_schema(config: dict) -> dict:
         "telephone": config.get("telephone") or None,
         "email": config.get("email") or None,
     }
+
+    alternate_names = [n for n in config.get("alternateName", []) if n.strip()]
+    if alternate_names:
+        schema["alternateName"] = alternate_names if len(alternate_names) > 1 else alternate_names[0]
 
     founder_name = config.get("founderName", "").strip()
     if founder_name:
@@ -60,6 +67,10 @@ def build_schema(config: dict) -> dict:
     address_fields = {k: v for k, v in address_fields.items() if v}
     if address_fields:
         schema["address"] = {"@type": "PostalAddress", **address_fields}
+
+    area_served = [a for a in config.get("areaServed", []) if a.strip()]
+    if area_served:
+        schema["areaServed"] = area_served if len(area_served) > 1 else area_served[0]
 
     same_as = [s for s in config.get("sameAs", []) if s.strip()]
     if same_as:

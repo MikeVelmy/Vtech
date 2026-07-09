@@ -1,8 +1,11 @@
 {
-  "_notes": "Single source of truth for the LocalBusiness JSON-LD injected into every page. Edit this file, then re-run `python3 scripts/generate_schema.py` to regenerate the schema block across all pages. Leave a field as an empty string if you don't have real data for it yet — the generator omits empty fields instead of publishing placeholder text as if it were real, since fake structured data is worse for trust/SEO than no data at all.",
+  "_notes": "Single source of truth for the ProfessionalService JSON-LD injected into every page. Edit this file, then re-run `python3 scripts/generate_schema.py` to regenerate the schema block across all pages. Leave a field as an empty string if you don't have real data for it yet — the generator omits empty fields instead of publishing placeholder text as if it were real, since fake structured data is worse for trust/SEO than no data at all.",
+  "_todo_url": "REQUIRED before this schema is fully valid: set `url` to the real live domain (e.g. https://www.velmuretech.com). Without it, `logo`/`image` are omitted entirely (schema.org requires an absolute URL for those, not a relative path) and canonical/og:url tags across the site still point at the https://velmuretech.example placeholder used during this SEO pass — search css/js grep for that string to find every place it needs swapping.",
+  "_todo_sameAs": "Add every official profile that represents this same business once they exist/are confirmed: Google Business Profile URL, Facebook Page, Instagram, LinkedIn Company Page. This is one of the strongest signals for Google to recognize 'Velmure Tech' as a real, disambiguated entity (directly relevant to the brand-name-search problem) — an empty array here is a real gap, not just a nice-to-have.",
 
   "name": "Velmure Tech",
-  "description": "Velmure Tech builds websites for car dealerships and travel agencies, focused on local search visibility so businesses get found, trusted, and contacted online.",
+  "alternateName": ["Velmure.Tech"],
+  "description": "Velmure Tech builds websites for car dealerships, travel agencies, and other local businesses, focused on local search visibility so businesses get found, trusted, and contacted online.",
   "url": "",
   "logoPath": "images/logo-icon.png",
   "telephone": "+233591847958",
@@ -10,10 +13,11 @@
   "founderName": "Michael Velmure-Mensah",
 
   "streetAddress": "",
-  "addressLocality": "",
-  "addressRegion": "",
+  "addressLocality": "Accra",
+  "addressRegion": "Greater Accra Region",
   "postalCode": "",
   "addressCountry": "GH",
 
+  "areaServed": ["Accra, Ghana"],
   "sameAs": []
 }
