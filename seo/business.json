@@ -5,7 +5,8 @@
 
   "name": "Velmure Tech",
   "alternateName": ["Velmure.Tech"],
-  "description": "Velmure Tech builds websites for car dealerships, travel agencies, and other local businesses, focused on local search visibility so businesses get found, trusted, and contacted online.",
+  "slogan": "Bringing the Future to the Present",
+  "description": "Velmure Tech is a website design and development agency building premium, conversion-focused websites, web applications, and e-commerce platforms for businesses in Ghana and worldwide, with SaaS development for startups and founders.",
   "url": "",
   "logoPath": "images/logo-icon.png",
   "telephone": "+233591847958",
@@ -18,6 +19,17 @@
   "postalCode": "",
   "addressCountry": "GH",
 
-  "areaServed": ["Accra, Ghana"],
+  "areaServed": ["Accra, Ghana", "Ghana", "Worldwide"],
+  "knowsAbout": [
+    "Website Design",
+    "Website Development",
+    "Web Application Development",
+    "SaaS Development",
+    "E-commerce Website Development",
+    "Landing Page Design",
+    "Local SEO",
+    "Mobile-First Web Design",
+    "Conversion Rate Optimization"
+  ],
   "sameAs": []
 }

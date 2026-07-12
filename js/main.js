@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSpotlight();
   initCounters();
   initRankClimb();
-  initArchitecturalGrid();
+  initSignalField();
 });
 
 /* ---- Mobile nav toggle --------------------------------------------------- */
@@ -215,43 +215,49 @@ function initRankClimb() {
   }
 }
 
-/* ---- Homepage hero — Dynamic Architectural Grid ---------------------------
-   Fine drafting grid on canvas; intersections near the cursor magnetically
-   pull toward it (spring-eased) and pick up a soft cyan glow. Pauses when
-   the tab is hidden or the hero scrolls off-screen.
+/* ---- Homepage hero — Signal field -----------------------------------------
+   A scatter of dim "unfound" location dots on canvas; one at a time lights up
+   cyan with an expanding ring, then hands off to another — the core promise
+   (getting found, not just built) as ambient motion. Pauses when the tab is
+   hidden or the hero scrolls off-screen.
 --------------------------------------------------------------------------- */
-function initArchitecturalGrid() {
-  const canvas = document.getElementById("gridCanvas");
+function initSignalField() {
+  const canvas = document.getElementById("signalCanvas");
+  const visual = document.querySelector(".vt-hero__visual");
   const hero = document.getElementById("hero");
-  if (!canvas || !hero || !canvas.getContext) return;
+  if (!canvas || !visual || !hero || !canvas.getContext) return;
   const ctx = canvas.getContext("2d");
 
-  const CELL = 60; // grid spacing in CSS px
-  const MAJOR_EVERY = 5; // heavier "ruled" line every Nth cell
-  const INFLUENCE = 190; // px radius the cursor affects
-  const MAX_PULL = 16; // max node displacement in px
-  const EASE = 0.14; // spring factor toward target displacement
+  const DOT_AREA = 4200; // px^2 of visual panel per dot
+  const MIN_DOTS = 22;
+  const MAX_DOTS = 110;
+  const PULSE_MS = 2600; // lifetime of one "found" pulse
+  const RING_MAX = 30; // max ring radius in px
+  const HOVER_RADIUS = 110; // px cursor influence
 
-  let dpr = 1, width = 0, height = 0, cols = 0, rows = 0;
-  let nodes = [];
+  let dpr = 1, width = 0, height = 0;
+  let dots = [];
+  let activeIndex = -1, pulseStart = 0;
   const mouse = { x: -9999, y: -9999, active: false };
   let raf = null, running = false, visible = true;
 
-  function buildGrid() {
-    cols = Math.ceil(width / CELL) + 2;
-    rows = Math.ceil(height / CELL) + 2;
-    nodes = [];
-    for (let r = 0; r < rows; r++) {
-      const row = [];
-      for (let c = 0; c < cols; c++) {
-        row.push({ x: c * CELL, y: r * CELL, dx: 0, dy: 0, tdx: 0, tdy: 0 });
-      }
-      nodes.push(row);
+  function buildDots() {
+    const count = Math.max(MIN_DOTS, Math.min(MAX_DOTS, Math.round((width * height) / DOT_AREA)));
+    dots = [];
+    for (let i = 0; i < count; i++) {
+      dots.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 1.1 + Math.random() * 1.1,
+        base: 0.14 + Math.random() * 0.18,
+      });
     }
+    activeIndex = dots.length ? Math.floor(Math.random() * dots.length) : -1;
+    pulseStart = performance.now();
   }
 
   function resize() {
-    const rect = hero.getBoundingClientRect();
+    const rect = visual.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
@@ -260,92 +266,62 @@ function initArchitecturalGrid() {
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    buildGrid();
+    buildDots();
   }
 
-  function updateNodes() {
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        const n = nodes[r][c];
-        n.tdx = 0;
-        n.tdy = 0;
-        if (mouse.active) {
-          const ddx = n.x - mouse.x;
-          const ddy = n.y - mouse.y;
-          const dist = Math.sqrt(ddx * ddx + ddy * ddy);
-          if (dist < INFLUENCE && dist > 0.001) {
-            let falloff = 1 - dist / INFLUENCE;
-            falloff *= falloff; // smoother, more "magnetic" taper
-            const pull = falloff * MAX_PULL;
-            n.tdx = (-ddx / dist) * pull;
-            n.tdy = (-ddy / dist) * pull;
-          }
-        }
-        n.dx += (n.tdx - n.dx) * EASE;
-        n.dy += (n.tdy - n.dy) * EASE;
-      }
-    }
-  }
-
-  function draw() {
+  function drawFrame(now) {
     ctx.clearRect(0, 0, width, height);
 
-    for (let r = 0; r < rows; r++) {
-      const isMajorRow = r % MAJOR_EVERY === 0;
-      ctx.beginPath();
-      ctx.strokeStyle = isMajorRow ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.07)";
-      ctx.lineWidth = isMajorRow ? 1.1 : 0.75;
-      for (let c = 0; c < cols; c++) {
-        const n = nodes[r][c];
-        const px = n.x + n.dx, py = n.y + n.dy;
-        if (c === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-      }
-      ctx.stroke();
-    }
+    dots.forEach((d, i) => {
+      let alpha = d.base;
+      let radius = d.r;
 
-    for (let c = 0; c < cols; c++) {
-      const isMajorCol = c % MAJOR_EVERY === 0;
-      ctx.beginPath();
-      ctx.strokeStyle = isMajorCol ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.07)";
-      ctx.lineWidth = isMajorCol ? 1.1 : 0.75;
-      for (let r = 0; r < rows; r++) {
-        const n = nodes[r][c];
-        const px = n.x + n.dx, py = n.y + n.dy;
-        if (r === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      if (mouse.active) {
+        const dx = d.x - mouse.x, dy = d.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < HOVER_RADIUS) alpha = Math.min(0.6, alpha + (1 - dist / HOVER_RADIUS) * 0.4);
       }
-      ctx.stroke();
-    }
 
-    if (mouse.active) {
-      ctx.fillStyle = "rgba(6,182,212,0.55)";
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          const n = nodes[r][c];
-          const mdx = n.x - mouse.x, mdy = n.y - mouse.y;
-          const d = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (d < INFLUENCE * 0.55) {
-            const a = 1 - d / (INFLUENCE * 0.55);
-            ctx.globalAlpha = a * 0.8;
-            ctx.beginPath();
-            ctx.arc(n.x + n.dx, n.y + n.dy, 2.1, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
+      if (i === activeIndex) {
+        const t = Math.min(1, (now - pulseStart) / PULSE_MS);
+        const bump = Math.sin(t * Math.PI); // eases 0 -> 1 -> 0 across the pulse
+        alpha = 0.35 + bump * 0.65;
+        radius = d.r + bump * 1.3;
+
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(6,182,212,${0.55 * (1 - t)})`;
+        ctx.lineWidth = 1.3;
+        ctx.arc(d.x, d.y, t * RING_MAX, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = `rgba(6,182,212,${alpha})`;
+      } else {
+        ctx.fillStyle = `rgba(226,232,240,${alpha})`;
       }
-      ctx.globalAlpha = 1;
+
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    if (activeIndex >= 0 && now - pulseStart > PULSE_MS && dots.length > 1) {
+      let next = activeIndex;
+      while (next === activeIndex) next = Math.floor(Math.random() * dots.length);
+      activeIndex = next;
+      pulseStart = now;
     }
   }
 
-  function loop() {
+  function loop(now) {
     if (!running) return;
-    updateNodes();
-    draw();
+    drawFrame(now);
     raf = requestAnimationFrame(loop);
   }
 
   function start() {
     if (running || REDUCED_MOTION || !visible) return;
     running = true;
+    pulseStart = performance.now();
     raf = requestAnimationFrame(loop);
   }
   function stop() {
@@ -359,12 +335,12 @@ function initArchitecturalGrid() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       resize();
-      if (REDUCED_MOTION) draw();
+      if (REDUCED_MOTION) drawFrame(performance.now());
     }, 120);
   });
 
   hero.addEventListener("pointermove", (e) => {
-    const rect = hero.getBoundingClientRect();
+    const rect = visual.getBoundingClientRect();
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top;
     mouse.active = true;
@@ -389,7 +365,7 @@ function initArchitecturalGrid() {
 
   resize();
   if (REDUCED_MOTION) {
-    draw();
+    drawFrame(performance.now());
   } else if (!("IntersectionObserver" in window)) {
     start();
   }

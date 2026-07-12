@@ -41,6 +41,7 @@ def build_schema(config: dict) -> dict:
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": config.get("name") or None,
+        "slogan": config.get("slogan") or None,
         "description": config.get("description") or None,
         "url": url or None,
         "logo": logo_url,
@@ -75,6 +76,10 @@ def build_schema(config: dict) -> dict:
     same_as = [s for s in config.get("sameAs", []) if s.strip()]
     if same_as:
         schema["sameAs"] = same_as
+
+    knows_about = [k for k in config.get("knowsAbout", []) if k.strip()]
+    if knows_about:
+        schema["knowsAbout"] = knows_about
 
     # Drop any top-level key that ended up None/empty.
     return {k: v for k, v in schema.items() if v not in (None, "", [], {})}
