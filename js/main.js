@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCounters();
   initRankClimb();
   initSignalField();
+  initSlotsCounter();
+  initFoundingOffer();
 });
 
 /* ---- Mobile nav toggle --------------------------------------------------- */
@@ -468,5 +470,42 @@ function initPortfolioFilter() {
         card.style.display = matches ? "" : "none";
       });
     });
+  });
+}
+
+/* ---- Monthly build slots (scarcity) --------------------------------------- */
+function initSlotsCounter() {
+  const el = document.getElementById("slots-counter");
+  if (!el) return;
+
+  const total = parseInt(el.dataset.total, 10);
+  const filled = parseInt(el.dataset.filled, 10);
+  if (!Number.isFinite(total) || !Number.isFinite(filled)) return;
+
+  const left = Math.max(total - filled, 0);
+  const month = new Date().toLocaleDateString(undefined, { month: "long" });
+  const filledText = filled === 0 ? "No build slots taken yet this month" : `${filled} of ${total} build slots filled this month`;
+  el.textContent = left > 0 ? `${filledText} — only ${left} left.` : `${filledText} — next month's waitlist is open.`;
+}
+
+/* ---- Founding offer deadline (urgency) ------------------------------------- */
+function initFoundingOffer() {
+  document.querySelectorAll("[data-expires]").forEach((el) => {
+    const date = new Date(el.dataset.expires + "T23:59:59");
+    if (Number.isNaN(date.getTime())) return;
+
+    const now = new Date();
+    const daysLeft = Math.ceil((date - now) / (1000 * 60 * 60 * 24));
+    const label = date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+
+    if (daysLeft > 1) {
+      el.textContent = `${label} (${daysLeft} days left)`;
+    } else if (daysLeft === 1) {
+      el.textContent = `${label} (1 day left)`;
+    } else if (daysLeft === 0) {
+      el.textContent = "today";
+    } else {
+      el.textContent = label;
+    }
   });
 }
